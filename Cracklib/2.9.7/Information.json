@@ -1,0 +1,14 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Cracklib",
+  "version": "2.9.7",
+  "architectures": ["x86_64"],
+  "description": "CrackLib Library and Dictionaries",
+  "website": "https://github.com/cracklib/cracklib",
+  "downloadLinks": ["https://github.com/cracklib/cracklib/releases/download/v2.9.7/cracklib-2.9.7.tar.bz2"],
+  "md5sums": ["0d68de25332cee5660850528a385427f"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [],
+  "options": []
+}
