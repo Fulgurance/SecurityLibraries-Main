@@ -21,6 +21,8 @@ class Target < ISM::Software
 
         makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}","install"],buildDirectoryPath)
 
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/pam.d")
+
         systemPasswordData = <<-CODE
         password  required    pam_pwquality.so   authtok_type=UNIX retry=1 difok=1 \
                                                  minlen=8 dcredit=0 ucredit=0 \
