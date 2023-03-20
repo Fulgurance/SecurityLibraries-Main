@@ -3,7 +3,7 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileDeleteLine("#{buildDirectoryPath}util/packer.c",61)
+        fileDeleteLine("#{buildDirectoryPath(false)}util/packer.c",61)
     end
 
     def configure
