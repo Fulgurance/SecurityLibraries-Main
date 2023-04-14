@@ -1,0 +1,20 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libgpg-Error",
+  "version": "1.42.0",
+  "architectures": ["x86_64"],
+  "description": "Small library that originally defined common error values for all GnuPG components",
+  "website": "https://www.gnupg.org/software/libgpg-error/index.html",
+  "downloadLinks": ["https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.42.tar.bz2"],
+  "md5sums": ["133fed221ba8f63f5842858a1ff67cb3"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    }
+  ],
+  "options": []
+}

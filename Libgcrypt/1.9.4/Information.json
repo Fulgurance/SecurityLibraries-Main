@@ -1,0 +1,20 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libgcrypt",
+  "version": "1.9.4",
+  "architectures": ["x86_64"],
+  "description": "General purpose cryptographic library originally based on code from GnuPG",
+  "website": "https://www.gnupg.org/related_software/libgcrypt/",
+  "downloadLinks": ["https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.9.4.tar.bz2"],
+  "md5sums": ["edc7becfe09c75d8f95ff7623e40c52e"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Libgpg-Error",
+      "version": "1.42.0",
+      "options": []
+    }
+  ],
+  "options": []
+}
