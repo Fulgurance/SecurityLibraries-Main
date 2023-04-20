@@ -22,7 +22,7 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html")
 
-        copyFile("#{buildDirectoryPath(false)}doc/README","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README")
+        copyFile("#{buildDirectoryPath(false)}README","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README")
         copyFile("#{buildDirectoryPath(false)}doc/README.apichanges","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README.apichanges")
         copyFile(Dir["#{buildDirectoryPath(false)}doc/fips*"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/")
         copyFile(Dir["#{buildDirectoryPath(false)}doc/libgcrypt*"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/")
@@ -35,17 +35,20 @@ class Target < ISM::Software
     def install
         super
 
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4",0o755)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html",0o755)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README",0o644)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README.apichanges",0o644)
-        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips*"],0o644)
-        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt*"],0o644)
-        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html/*"],0o644)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt_nochunks.html",0o644)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.txt",0o644)
-        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.texi",0o644)
-        exit 1
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4",0o755)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html",0o755)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README.apichanges",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips-fsm.fig",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips-fsm.pdf",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips-fsm.png",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt-modules.fig",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt-modules.pdf",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt-modules.png",0o644)
+        setPermissionsRecursively("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt_nochunks.html",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.txt",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.texi",0o644)
     end
 
 end
