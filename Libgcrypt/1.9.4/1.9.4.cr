@@ -35,16 +35,17 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4",0o755)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html",0o755)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README",0o644)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README.apichanges",0o644)
-        setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips*"],0o644)
-        setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt*"],0o644)
-        setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html/*"],0o644)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt_nochunks.html",0o644)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.txt",0o644)
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.texi",0o644)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4",0o755)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html",0o755)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README",0o644)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README.apichanges",0o644)
+        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/fips*"],0o644)
+        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/libgcrypt*"],0o644)
+        #setPermissions(Dir["#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/html/*"],0o644)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt_nochunks.html",0o644)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.txt",0o644)
+        #setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/gcrypt.texi",0o644)
+        exit 1
     end
 
 end
