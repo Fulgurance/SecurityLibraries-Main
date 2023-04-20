@@ -25,7 +25,7 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgcrypt-1.9.4/README",0o644)
+        setPermissions("#{Ism.settings.rootPath}usr/share/doc/libgpg-error-1.42/README",0o644)
     end
 
 end
