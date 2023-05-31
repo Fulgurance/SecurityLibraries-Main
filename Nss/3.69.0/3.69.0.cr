@@ -64,13 +64,10 @@ class Target < ISM::Software
         super
 
         makeLink("../../../../nss/config/nss.pc","#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc",:symbolicLinkByOverwrite)
-        setPermissions("#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
 
         makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/nss-config",:symbolicLinkByOverwrite)
-        setPermissions("#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
 
         makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/pk12util",:symbolicLinkByOverwrite)
-        setPermissions("#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
 
         if option("P11-Kit")
             makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
