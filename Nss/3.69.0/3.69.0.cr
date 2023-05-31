@@ -40,9 +40,6 @@ class Target < ISM::Software
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libcrmf.a", 0o644)
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/pkgconfig/nss.pc"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/")
-        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
-
         Dir["#{workDirectoryPath(false)}/dist/public/nss/*"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
@@ -71,6 +68,9 @@ class Target < ISM::Software
 
     def install
         super
+
+        makeLink("../../../../nss/config/nss.pc","#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc",:symbolicLinkByOverwrite)
+        setPermissions("#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
 
         if option("P11-Kit")
             makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
