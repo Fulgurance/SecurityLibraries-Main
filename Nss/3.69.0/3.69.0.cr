@@ -40,7 +40,7 @@ class Target < ISM::Software
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libcrmf.a", 0o644)
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/pkgconfig/nss.pc"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc")
+        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/pkgconfig/nss.pc"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
 
         Dir["#{workDirectoryPath(false)}/dist/public/nss/*"].each do |filepath|
