@@ -58,12 +58,6 @@ class Target < ISM::Software
 
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/certutil"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/certutil", 0o755)
-
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/nss-config"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
-        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
-
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/pk12util"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
-        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
     end
 
     def install
@@ -71,6 +65,12 @@ class Target < ISM::Software
 
         makeLink("../../../../nss/config/nss.pc","#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc",:symbolicLinkByOverwrite)
         setPermissions("#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
+
+        makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/nss-config",:symbolicLinkByOverwrite)
+        setPermissions("#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
+
+        makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/pk12util",:symbolicLinkByOverwrite)
+        setPermissions("#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
 
         if option("P11-Kit")
             makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
