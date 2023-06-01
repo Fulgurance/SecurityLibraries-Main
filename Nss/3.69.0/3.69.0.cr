@@ -9,7 +9,8 @@ class Target < ISM::Software
                     "ZLIB_LIBS=-lz",
                     "NSS_ENABLE_WERROR=0",
                     "USE_64=#{architecture("x86_64") ? "1" : "0"}",
-                    "NSS_USE_SYSTEM_SQLITE=#{option("Sqlite") ? "1" : "0"}"],
+                    "NSS_USE_SYSTEM_SQLITE=#{option("Sqlite") ? "1" : "0"}",
+                    "NSS_DISABLE_GTESTS=1"],
                     buildDirectoryPath)
     end
     
@@ -58,16 +59,21 @@ class Target < ISM::Software
 
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/certutil"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/certutil", 0o755)
+
+        copyFile("#{buildDirectoryPath(false)}/config/nss-config","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
+        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
+
+        copyFile(Dir["#{buildDirectoryPath(false)}/cmd/pk12util/Linux*/pk12util"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
+        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
+
+        copyFile("#{buildDirectoryPath(false)}/config/nss.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc")
+        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
     end
 
     def install
         super
 
         makeLink("../../../../nss/config/nss.pc","#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc",:symbolicLinkByOverwrite)
-
-        makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/nss-config",:symbolicLinkByOverwrite)
-
-        makeLink("../../../nss/config/nss-config","#{Ism.settings.rootPath}usr/bin/pk12util",:symbolicLinkByOverwrite)
 
         if option("P11-Kit")
             makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
