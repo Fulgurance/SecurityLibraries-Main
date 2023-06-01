@@ -73,8 +73,6 @@ class Target < ISM::Software
     def install
         super
 
-        makeLink("../../../../nss/config/nss.pc","#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc",:symbolicLinkByOverwrite)
-
         if option("P11-Kit")
             makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
         end
