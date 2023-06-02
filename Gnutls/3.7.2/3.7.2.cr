@@ -7,6 +7,7 @@ class Target < ISM::Software
                             "--docdir=/usr/share/doc/gnutls-3.7.2",
                             "--disable-guile",
                             "--disable-rpath",
+                            "#{option("Libunistring") ? "" : "--with-included-unistring"}",
                             "--with-default-trust-store-pkcs11=\"pkcs11:\""],
                             buildDirectoryPath)
     end
