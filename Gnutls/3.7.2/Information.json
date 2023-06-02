@@ -1,0 +1,66 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Gnutls",
+  "version": "3.7.2",
+  "architectures": ["x86_64"],
+  "description": "Secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them",
+  "website": "https://gnutls.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Nettle",
+      "version": "3.7.3",
+      "options": []
+    }
+  ],
+  "options": [
+    {
+      "name": "Make-Ca",
+      "description": "Enable make-ca support",
+      "active": true,
+      "dependencies": [
+        {
+          "name": "Make-Ca",
+          "version": "1.7.0",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "Libunistring",
+      "description": "Enable libunistring support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libunistring",
+          "version": "0.9.10",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "Libtasn1",
+      "description": "Enable libtasn1 support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libtasn1",
+          "version": "4.17.0",
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "P11-Kit",
+      "description": "Enable p11-kit support",
+      "active": true,
+      "dependencies": [
+        {
+          "name": "P11-Kit",
+          "version": "0.24.0",
+          "options": []
+        }
+      ]
+    }
+  ]
+}
