@@ -2,7 +2,9 @@
   "port": "SecurityLibraries-Main",
   "name": "Libgpg-Error",
   "version": "1.42.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Small library that originally defined common error values for all GnuPG components",
   "website": "https://www.gnupg.org/software/libgpg-error/index.html",
   "installedFiles": [],

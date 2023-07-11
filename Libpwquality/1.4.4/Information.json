@@ -2,7 +2,9 @@
   "port": "SecurityLibraries-Main",
   "name": "Libpwquality",
   "version": "1.4.4",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Password quality checking library",
   "website": "https://github.com/libpwquality/libpwquality",
   "installedFiles": [],

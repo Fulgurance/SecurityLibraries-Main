@@ -2,7 +2,9 @@
   "port": "SecurityLibraries-Main",
   "name": "Libgcrypt",
   "version": "1.9.4",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "General purpose cryptographic library originally based on code from GnuPG",
   "website": "https://www.gnupg.org/related_software/libgcrypt/",
   "installedFiles": [],
