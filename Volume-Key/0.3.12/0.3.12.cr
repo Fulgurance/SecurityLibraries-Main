@@ -10,7 +10,8 @@ class Target < ISM::Software
         super
 
         configureSource([   "--prefix=/usr",
-                            "--without-python"],
+                            "--without-python",
+                            "#{option("Swig") ? "--with-python3" : "--without-python3"}"],
                             buildDirectoryPath)
     end
 
