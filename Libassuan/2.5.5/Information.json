@@ -1,0 +1,21 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libassuan",
+  "version": "2.5.5",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Small library implementing the so-called Assuan protocol. This protocol is used for IPC between most newer GnuPG components",
+  "website": "https://www.gnupg.org/software/libassuan/index.html",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Libgpg-Error",
+      "version": "1.42.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueOptions": []
+}

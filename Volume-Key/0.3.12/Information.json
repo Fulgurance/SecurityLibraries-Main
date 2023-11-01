@@ -1,0 +1,50 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Volume-Key",
+  "version": "0.3.12",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases, and the associated command-line tool",
+  "website": "https://pagure.io/volume_key",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Cryptsetup",
+      "version": "2.3.6",
+      "options": []
+    },
+    {
+      "name": "Glib",
+      "version": "2.68.4",
+      "options": []
+    },
+    {
+      "name": "Gpgme",
+      "version": "1.16.0",
+      "options": []
+    },
+    {
+      "name": "Nss",
+      "version": "3.69.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Swig",
+      "description": "Enable swig support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Swig",
+          "version": "4.0.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueOptions": []
+}
