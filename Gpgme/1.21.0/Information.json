@@ -1,0 +1,21 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Gpgme",
+  "version": "1.21.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Library designed to make access to GnuPG easier for applications",
+  "website": "https://www.gnupg.org/software/gpgme/index.html",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Libassuan",
+      "version": "2.5.6",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueOptions": []
+}
