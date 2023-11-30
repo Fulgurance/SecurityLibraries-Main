@@ -5,8 +5,8 @@
   "architectures": [
     "x86_64"
   ],
-  "description": "General purpose cryptographic library originally based on code from GnuPG",
-  "website": "https://www.gnupg.org/related_software/libgcrypt/",
+  "description": "Library to make the tasks of working with X.509 certificates, CMS data and related objects more easy",
+  "website": "https://www.gnupg.org/software/libksba/index.html",
   "installedFiles": [],
   "dependencies": [
     {
