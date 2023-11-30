@@ -1,0 +1,35 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libksba",
+  "version": "1.6.4",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "General purpose cryptographic library originally based on code from GnuPG",
+  "website": "https://www.gnupg.org/related_software/libgcrypt/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Libgpg-Error",
+      "version": "1.47.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Valgrind",
+      "description": "Enable valgrind support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Valgrind",
+          "version": "3.21.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+  ],
+  "uniqueOptions": []
+}
