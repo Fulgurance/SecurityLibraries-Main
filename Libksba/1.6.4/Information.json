@@ -11,7 +11,7 @@
   "dependencies": [
     {
       "name": "Libgpg-Error",
-      "version": "1.47.0",
+      "version": ">=1.47.0",
       "options": []
     }
   ],
@@ -24,7 +24,7 @@
       "dependencies": [
         {
           "name": "Valgrind",
-          "version": "3.21.0",
+          "version": ">=3.21.0",
           "options": []
         }
       ],

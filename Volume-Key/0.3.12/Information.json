@@ -11,22 +11,22 @@
   "dependencies": [
     {
       "name": "Cryptsetup",
-      "version": "2.3.6",
+      "version": ">=2.3.6",
       "options": []
     },
     {
       "name": "Glib",
-      "version": "2.68.4",
+      "version": ">=2.68.4",
       "options": []
     },
     {
       "name": "Gpgme",
-      "version": "1.16.0",
+      "version": ">=1.16.0",
       "options": []
     },
     {
       "name": "Nss",
-      "version": "3.69.0",
+      "version": ">=3.69.0",
       "options": []
     }
   ],
@@ -39,7 +39,7 @@
       "dependencies": [
         {
           "name": "Swig",
-          "version": "4.0.2",
+          "version": ">=4.0.2",
           "options": []
         }
       ],
