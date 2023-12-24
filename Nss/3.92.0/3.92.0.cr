@@ -60,13 +60,13 @@ class Target < ISM::Software
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/certutil"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/certutil", 0o755)
 
-        copyFile("#{buildDirectoryPath(false)}/config/nss-config","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
+        copyFile("#{workDirectoryPath(false)}/config/nss-config","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
 
-        copyFile(Dir["#{buildDirectoryPath(false)}/cmd/pk12util/Linux*/pk12util"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
+        copyFile(Dir["#{workDirectoryPath(false)}/cmd/pk12util/Linux*/pk12util"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
 
-        copyFile("#{buildDirectoryPath(false)}/config/nss.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc")
+        copyFile("#{workDirectoryPath(false)}/config/nss.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc")
         setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig/nss.pc", 0o644)
     end
 
