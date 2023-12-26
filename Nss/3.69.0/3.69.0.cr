@@ -61,7 +61,7 @@ class Target < ISM::Software
 
         copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/pkgconfig/nss.pc"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/pkgconfig/")
+        copyFile("#{buildDirectoryPath(false)}/pkg/pkg-config/nss.pc.in","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss.pc")
     end
 
     def install
