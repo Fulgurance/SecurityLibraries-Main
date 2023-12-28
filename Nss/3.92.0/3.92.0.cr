@@ -57,11 +57,9 @@ class Target < ISM::Software
             setPermissions(destination,0o644)
         end
 
-        copyFile("#{buildDirectoryPath(false)}/pkg/pkg-config/nss-config.in","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
+        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/{certutil,nss-config,pk12util}"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
-
-        copyFile("#{buildDirectoryPath(false)}/pkg/pkg-config/nss.pc.in","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc")
+        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/pkgconfig/nss.pc"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/pkgconfig")
     end
 
     def install
