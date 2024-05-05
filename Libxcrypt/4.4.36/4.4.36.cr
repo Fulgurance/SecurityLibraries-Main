@@ -94,17 +94,13 @@ class Target < ISM::Software
                         "install-pkgconfigDATA"],
                         path: buildDirectoryPath(entry: "x32Bits"))
         end
-    end
-
-    def install
-        super
 
         if option("32Bits")
-            makeLink("libxcrypt.pc","#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
-            makeLink("libxcrypt.pc","#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
         end
     end
 

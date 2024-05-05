@@ -62,6 +62,10 @@ class Target < ISM::Software
         copyFile("#{buildDirectoryPath(false)}/config/nss-config","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
 
         copyFile("#{buildDirectoryPath(false)}/config/nss.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc")
+
+        if option("P11-Kit")
+            makeLink("./pkcs11/p11-kit-trust.so","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
+        end
     end
 
     def install
@@ -71,10 +75,6 @@ class Target < ISM::Software
         setPermissions("#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
         setPermissions("#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
         setPermissions("#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc", 0o644)
-
-        if option("P11-Kit")
-            makeLink("./pkcs11/p11-kit-trust.so","#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
-        end
     end
 
 end
