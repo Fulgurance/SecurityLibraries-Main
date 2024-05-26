@@ -2,14 +2,13 @@
   "port": "SecurityLibraries-Main",
   "name": "Libxcrypt",
   "version": "4.4.36",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
   "website": "https://github.com/besser82/libxcrypt/",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "SystemBase-Main",
       "name": "SystemBase",
       "version": ">=0.2.0",
       "options": ["Pass3"]

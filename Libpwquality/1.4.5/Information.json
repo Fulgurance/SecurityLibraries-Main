@@ -2,16 +2,15 @@
   "port": "SecurityLibraries-Main",
   "name": "Libpwquality",
   "version": "1.4.5",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Password quality checking library",
   "website": "https://github.com/libpwquality/libpwquality",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "SecurityLibraries-Main",
       "name": "Cracklib",
-      "version": "2.9.11",
+      "version": ">=2.9.11",
       "options": []
     }
   ],
@@ -23,8 +22,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "Linux-Pam",
-          "version": "1.5.3",
+          "version": ">=1.5.3",
           "options": []
         }
       ],

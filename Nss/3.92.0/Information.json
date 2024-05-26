@@ -10,8 +10,9 @@
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "BaseLibraries-Main",
       "name": "Nspr",
-      "version": "4.35.0",
+      "version": ">=4.35.0",
       "options": []
     }
   ],
@@ -23,8 +24,9 @@
       "active": true,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "P11-Kit",
-          "version": "0.25.0",
+          "version": ">=0.25.0",
           "options": []
         }
       ],
@@ -36,8 +38,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "DatabaseLibraries-Main",
           "name": "Sqlite",
-          "version": "3.42.0",
+          "version": ">=3.42.0",
           "options": []
         }
       ],
