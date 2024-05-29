@@ -19,7 +19,7 @@
     {
       "name": "Linux-Pam",
       "description": "Enable linux-pam support",
-      "active": false,
+      "active": true,
       "dependencies": [
         {
           "port": "Security-Main",
@@ -34,5 +34,5 @@
   "uniqueDependencies": [],
   "uniqueOptions": [],
   "selectedDependencies": [],
-  "allowCodependencies": []
+  "allowCodependencies": ["@Security-Main:Linux-Pam"]
 }
