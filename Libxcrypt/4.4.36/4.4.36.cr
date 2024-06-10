@@ -73,10 +73,10 @@ class Target < ISM::Software
 
         if option("32Bits")
             makeDirectory("#{buildDirectoryPath(false, entry: "32Bits")}/32Bits")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
             copyDirectory(  "#{buildDirectoryPath(false, entry: "32Bits")}/.libs",
-                            "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32")
+                            "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32")
 
             makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
                         "install-pkgconfigDATA"],
@@ -85,10 +85,10 @@ class Target < ISM::Software
 
         if option("x32Bits")
             makeDirectory("#{buildDirectoryPath(false, entry: "x32Bits")}/x32Bits")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
             copyDirectory(  "#{buildDirectoryPath(false, entry: "x32Bits")}/.libs",
-                            "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32")
+                            "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32")
 
             makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
                         "install-pkgconfigDATA"],
@@ -96,11 +96,11 @@ class Target < ISM::Software
         end
 
         if option("32Bits")
-            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
-            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
         end
     end
 

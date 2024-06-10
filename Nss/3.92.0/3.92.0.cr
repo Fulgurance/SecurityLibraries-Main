@@ -17,55 +17,55 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/pkgconfig")
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/include/nss")
-        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/include/nss",0o755)
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/pkgconfig")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss")
+        setPermissions("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss",0o755)
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin")
 
-        Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/*.so"].each do |filepath|
+        Dir["#{workDirectoryPath}/dist/Linux*/lib/*.so"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
             copyFile(filepath,destination)
             setPermissions(destination,0o755)
         end
 
-        Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/*.chk"].each do |filepath|
+        Dir["#{workDirectoryPath}/dist/Linux*/lib/*.chk"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
             copyFile(filepath,destination)
             setPermissions(destination,0o644)
         end
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/")
-        setPermissions("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libcrmf.a", 0o644)
+        copyFile(Dir["#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
+        setPermissions("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libcrmf.a", 0o644)
 
-        Dir["#{workDirectoryPath(false)}/dist/public/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPath}/dist/public/nss/*"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
             copyFile(filepath,destination)
             setPermissions(destination,0o644)
         end
 
-        Dir["#{workDirectoryPath(false)}/dist/private/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPath}/dist/private/nss/*"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
             copyFile(filepath,destination)
             setPermissions(destination,0o644)
         end
 
-        copyFile(Dir["#{workDirectoryPath(false)}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/")
+        copyFile(Dir["#{workDirectoryPath}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/")
 
-        copyFile("#{buildDirectoryPath(false)}/config/nss-config","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/nss-config")
+        copyFile("#{buildDirectoryPath}/config/nss-config","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/nss-config")
 
-        copyFile("#{buildDirectoryPath(false)}/config/nss.pc","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc")
+        copyFile("#{buildDirectoryPath}/config/nss.pc","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc")
 
         if option("P11-Kit")
-            deleteFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libnssckbi.so")
-            makeLink("./pkcs11/p11-kit-trust.so","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
+            deleteFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libnssckbi.so")
+            makeLink("./pkcs11/p11-kit-trust.so","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libnssckbi.so",:symbolicLinkByOverwrite)
         end
     end
 
