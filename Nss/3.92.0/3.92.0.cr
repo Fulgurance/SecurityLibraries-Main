@@ -42,7 +42,7 @@ class Target < ISM::Software
             runChmodCommand(["0644",destination])
         end
 
-        copyFile(Dir["#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
+        copyFile("#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
 
         runChmodCommand(["0644","/usr/lib/libcrmf.a"])
 
@@ -64,7 +64,7 @@ class Target < ISM::Software
             runChmodCommand(["0644",destination])
         end
 
-        copyFile(Dir["#{workDirectoryPath}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/")
+        copyFile("#{workDirectoryPath}/dist/Linux*/bin/{certutil,pk12util}","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/")
 
         copyFile("#{buildDirectoryPath}/config/nss-config","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/nss-config")
 
