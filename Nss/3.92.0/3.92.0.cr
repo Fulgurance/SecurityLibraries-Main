@@ -19,7 +19,9 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/pkgconfig")
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss")
-        setPermissions("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss",0o755)
+
+        runChmodCommand(["0755","/usr/include/nss"])
+
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin")
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.so"].each do |filepath|
@@ -27,7 +29,8 @@ class Target < ISM::Software
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
             copyFile(filepath,destination)
-            setPermissions(destination,0o755)
+
+            runChmodCommand(["0755",destination])
         end
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.chk"].each do |filepath|
@@ -35,18 +38,21 @@ class Target < ISM::Software
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
             copyFile(filepath,destination)
-            setPermissions(destination,0o644)
+
+            runChmodCommand(["0644",destination])
         end
 
         copyFile(Dir["#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
-        setPermissions("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libcrmf.a", 0o644)
+
+        runChmodCommand(["0644","/usr/lib/libcrmf.a"])
 
         Dir["#{workDirectoryPath}/dist/public/nss/*"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
             copyFile(filepath,destination)
-            setPermissions(destination,0o644)
+
+            runChmodCommand(["0644",destination])
         end
 
         Dir["#{workDirectoryPath}/dist/private/nss/*"].each do |filepath|
@@ -54,7 +60,8 @@ class Target < ISM::Software
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
             copyFile(filepath,destination)
-            setPermissions(destination,0o644)
+
+            runChmodCommand(["0644",destination])
         end
 
         copyFile(Dir["#{workDirectoryPath}/dist/Linux*/bin/{certutil,pk12util}"],"#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/")
@@ -72,10 +79,10 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}usr/bin/certutil", 0o755)
-        setPermissions("#{Ism.settings.rootPath}usr/bin/nss-config", 0o755)
-        setPermissions("#{Ism.settings.rootPath}usr/bin/pk12util", 0o755)
-        setPermissions("#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc", 0o644)
+        runChmodCommand(["0755","/usr/bin/certutil"])
+        runChmodCommand(["0755","/usr/bin/nss-config"])
+        runChmodCommand(["0755","/usr/bin/pk12util"])
+        runChmodCommand(["0644","/usr/lib/pkgconfig/nss.pc"])
     end
 
 end

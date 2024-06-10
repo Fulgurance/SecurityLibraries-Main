@@ -23,8 +23,8 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}usr/lib/libhogweed.so",0o755)
-        setPermissions("#{Ism.settings.rootPath}usr/lib/libnettle.so",0o755)
+        runChmodCommand(["0755","/usr/lib/libhogweed.so"])
+        runChmodCommand(["0755","/usr/lib/libnettle.so"])
     end
 
 end
