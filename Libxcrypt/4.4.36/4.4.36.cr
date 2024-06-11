@@ -72,10 +72,10 @@ class Target < ISM::Software
                     path: buildDirectoryPath(entry: "MainBuild"))
 
         if option("32Bits")
-            makeDirectory("#{buildDirectoryPath(false, entry: "32Bits")}/32Bits")
+            makeDirectory("#{buildDirectoryPath(entry: "32Bits")}/32Bits")
             makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
-            copyDirectory(  "#{buildDirectoryPath(false, entry: "32Bits")}/.libs",
+            copyDirectory(  "#{buildDirectoryPath(entry: "32Bits")}/.libs",
                             "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32")
 
             makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
@@ -84,10 +84,10 @@ class Target < ISM::Software
         end
 
         if option("x32Bits")
-            makeDirectory("#{buildDirectoryPath(false, entry: "x32Bits")}/x32Bits")
+            makeDirectory("#{buildDirectoryPath(entry: "x32Bits")}/x32Bits")
             makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
-            copyDirectory(  "#{buildDirectoryPath(false, entry: "x32Bits")}/.libs",
+            copyDirectory(  "#{buildDirectoryPath(entry: "x32Bits")}/.libs",
                             "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32")
 
             makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
