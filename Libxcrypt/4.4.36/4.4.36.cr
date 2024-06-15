@@ -18,35 +18,35 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource([   "--prefix=/usr",
-                            "--enable-hashes=strong,glibc",
-                            "--enable-obsolete-api=no",
-                            "--disable-static",
-                            "--disable-failure-tokens"],
-                            path: buildDirectoryPath(entry: "MainBuild"))
+        configureSource(arguments:  "--prefix=/usr                  \
+                                    --enable-hashes=strong,glibc    \
+                                    --enable-obsolete-api=no        \
+                                    --disable-static                \
+                                    --disable-failure-tokens",
+                        path:       buildDirectoryPath(entry: "MainBuild"))
 
         if option("32Bits")
-            configureSource([   "--host=i686-#{Ism.settings.systemTargetName}-linux-gnu",
-                                "--prefix=/usr",
-                                "--libdir=/usr/lib32",
-                                "--enable-hashes=strong,glibc",
-                                "--enable-obsolete-api=no",
-                                "--disable-static",
-                                "--disable-failure-tokens"],
-                                path: buildDirectoryPath(entry: "32Bits"),
-                                environment: {"CC" =>"gcc -m32"})
+            configureSource(arguments:      "--host=i686-#{Ism.settings.systemTargetName}-linux-gnu \
+                                            --prefix=/usr                                           \
+                                            --libdir=/usr/lib32                                     \
+                                            --enable-hashes=strong,glibc                            \
+                                            --enable-obsolete-api=no                                \
+                                            --disable-static                                        \
+                                            --disable-failure-tokens",
+                            path:           buildDirectoryPath(entry: "32Bits"),
+                            environment:    {"CC" =>"gcc -m32"})
         end
 
         if option("x32Bits")
-            configureSource([   "--host=#{Ism.settings.systemTarget}x32",
-                                "--prefix=/usr",
-                                "--libdir=/usr/libx32",
-                                "--enable-hashes=strong,glibc",
-                                "--enable-obsolete-api=no",
-                                "--disable-static",
-                                "--disable-failure-tokens"],
-                                path: buildDirectoryPath(entry: "x32Bits"),
-                                environment: {"CC" =>"gcc -mx32"})
+            configureSource(arguments:      "--host=#{Ism.settings.systemTarget}x32 \
+                                            --prefix=/usr                           \
+                                            --libdir=/usr/libx32                    \
+                                            --enable-hashes=strong,glibc            \
+                                            --enable-obsolete-api=no                \
+                                            --disable-static                        \
+                                            --disable-failure-tokens",
+                            path:           buildDirectoryPath(entry: "x32Bits"),
+                            environment:    {"CC" =>"gcc -mx32"})
         end
     end
 
@@ -67,9 +67,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
-                    "install"],
-                    path: buildDirectoryPath(entry: "MainBuild"))
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath(entry: "MainBuild"))
 
         if option("32Bits")
             makeDirectory("#{buildDirectoryPath(entry: "32Bits")}/32Bits")
@@ -78,9 +77,8 @@ class Target < ISM::Software
             copyDirectory(  "#{buildDirectoryPath(entry: "32Bits")}/.libs",
                             "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32")
 
-            makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
-                        "install-pkgconfigDATA"],
-                        path: buildDirectoryPath(entry: "32Bits"))
+            makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath} install-pkgconfigDATA",
+                        path:       buildDirectoryPath(entry: "32Bits"))
         end
 
         if option("x32Bits")
@@ -90,17 +88,20 @@ class Target < ISM::Software
             copyDirectory(  "#{buildDirectoryPath(entry: "x32Bits")}/.libs",
                             "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32")
 
-            makeSource( ["DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}",
-                        "install-pkgconfigDATA"],
-                        path: buildDirectoryPath(entry: "x32Bits"))
+            makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath} install-pkgconfigDATA",
+                        path:       buildDirectoryPath(entry: "x32Bits"))
         end
 
         if option("32Bits")
-            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink(   target: "libxcrypt.pc",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",
+                        name:   :symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
-            makeLink("libxcrypt.pc","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",:symbolicLinkByOverwrite)
+            makeLink(   target: "libxcrypt.pc",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",
+                        name:   :symbolicLinkByOverwrite)
         end
     end
 

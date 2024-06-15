@@ -3,7 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
-        runPythonCommand(["configure.py", "--prefix=/usr"],buildDirectoryPath)
+        runPythonCommand(   arguments:  "configure.py --prefix=/usr",
+                            path:       buildDirectoryPath)
     end
 
     def build
@@ -15,7 +16,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
     end
 
 end

@@ -3,11 +3,11 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource([   "--prefix=/usr",
-                            "--docdir=/usr/share/doc/gnutls-3.8.1",
-                            "#{option("Libunistring") ? "" : "--with-included-unistring"}",
-                            "--with-default-trust-store-pkcs11=\"pkcs11:\""],
-                            buildDirectoryPath)
+        configureSource(arguments:  "--prefix=/usr                                                  \
+                                    --docdir=/usr/share/doc/gnutls-3.8.1                            \
+                                    #{option("Libunistring") ? "" : "--with-included-unistring"}    \
+                                    --with-default-trust-store-pkcs11=\"pkcs11:\"",
+                        path:       buildDirectoryPath)
     end
 
     def build
@@ -19,7 +19,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
     end
 
 end

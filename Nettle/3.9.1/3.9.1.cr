@@ -3,9 +3,9 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource([   "--prefix=/usr",
-                            "--disable-static"],
-                            buildDirectoryPath)
+        configureSource(arguments:  "--prefix=/usr  \
+                                    --disable-static",
+                        path:       buildDirectoryPath)
     end
 
     def build
@@ -17,14 +17,15 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
     end
 
     def install
         super
 
-        runChmodCommand(["0755","/usr/lib/libhogweed.so"])
-        runChmodCommand(["0755","/usr/lib/libnettle.so"])
+        runChmodCommand("0755 /usr/lib/libhogweed.so")
+        runChmodCommand("0755 /usr/lib/libnettle.so")
     end
 
 end
