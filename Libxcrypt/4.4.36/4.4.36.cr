@@ -95,13 +95,13 @@ class Target < ISM::Software
         if option("32Bits")
             makeLink(   target: "libxcrypt.pc",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libcrypt.pc",
-                        name:   :symbolicLinkByOverwrite)
+                        type:   :symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
             makeLink(   target: "libxcrypt.pc",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libcrypt.pc",
-                        name:   :symbolicLinkByOverwrite)
+                        type:   :symbolicLinkByOverwrite)
         end
     end
 
