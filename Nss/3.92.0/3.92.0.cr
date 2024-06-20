@@ -20,8 +20,6 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/pkgconfig")
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss")
 
-        runChmodCommand("0755 /usr/include/nss")
-
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin")
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.so"].each do |filepath|
@@ -30,8 +28,6 @@ class Target < ISM::Software
 
             copyFile(   filepath,
                         destination)
-
-            runChmodCommand("0755 #{destination}")
         end
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.chk"].each do |filepath|
@@ -40,14 +36,10 @@ class Target < ISM::Software
 
             copyFile(   filepath,
                         destination)
-
-            runChmodCommand("0644 #{destination}")
         end
 
         copyFile(   "#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
-
-        runChmodCommand("0644 /usr/lib/libcrmf.a")
 
         Dir["#{workDirectoryPath}/dist/public/nss/*"].each do |filepath|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
@@ -55,8 +47,6 @@ class Target < ISM::Software
 
             copyFile(   filepath,
                         destination)
-
-            runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPath}/dist/private/nss/*"].each do |filepath|
@@ -65,8 +55,6 @@ class Target < ISM::Software
 
             copyFile(   filepath,
                         destination)
-
-            runChmodCommand("0644 #{destination}")
         end
 
         copyFile(   "#{workDirectoryPath}/dist/Linux*/bin/{certutil,pk12util}",
@@ -90,10 +78,28 @@ class Target < ISM::Software
     def install
         super
 
+        runChmodCommand("0755 /usr/include/nss")
+        runChmodCommand("0644 /usr/lib/libcrmf.a")
         runChmodCommand("0755 /usr/bin/certutil")
         runChmodCommand("0755 /usr/bin/nss-config")
         runChmodCommand("0755 /usr/bin/pk12util")
         runChmodCommand("0644 /usr/lib/pkgconfig/nss.pc")
+
+        Dir["#{workDirectoryPath}/dist/Linux*/lib/*.so"].each do |filepath|
+            runChmodCommand("0755 #{destination}")
+        end
+
+        Dir["#{workDirectoryPath}/dist/Linux*/lib/*.chk"].each do |filepath|
+            runChmodCommand("0644 #{destination}")
+        end
+
+        Dir["#{workDirectoryPath}/dist/public/nss/*"].each do |filepath|
+            runChmodCommand("0644 #{destination}")
+        end
+
+        Dir["#{workDirectoryPath}/dist/private/nss/*"].each do |filepath|
+            runChmodCommand("0644 #{destination}")
+        end
     end
 
 end
