@@ -3,9 +3,9 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr
-                                    --disable-static
-                                    --with-securedir=/usr/lib/security
+        configureSource(arguments:  "--prefix=/usr                      \
+                                    --disable-static                    \
+                                    --with-securedir=/usr/lib/security  \
                                     --with-python-binary=python3",
                         path:       buildDirectoryPath)
     end
