@@ -86,18 +86,26 @@ class Target < ISM::Software
         runChmodCommand("0644 /usr/lib/pkgconfig/nss.pc")
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.so"].each do |filepath|
+            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0755 #{destination}")
         end
 
         Dir["#{workDirectoryPath}/dist/Linux*/lib/*.chk"].each do |filepath|
+            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPath}/dist/public/nss/*"].each do |filepath|
+            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPath}/dist/private/nss/*"].each do |filepath|
+            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
     end
