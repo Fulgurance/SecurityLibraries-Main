@@ -67,8 +67,6 @@ class Target < ISM::Software
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/pkgconfig/nss.pc")
 
         if option("P11-Kit")
-            deleteFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libnssckbi.so")
-
             makeLink(   target: "./pkcs11/p11-kit-trust.so",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/libnssckbi.so",
                         type:   :symbolicLinkByOverwrite)
