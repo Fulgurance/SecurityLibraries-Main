@@ -95,7 +95,7 @@ class Target < ISM::Software
         runChmodCommand("0644 /usr/lib/libnssckbi-testlib.so")
         runChmodCommand("0644 /usr/lib/libnssdbm3.chk")
         runChmodCommand("0644 /usr/lib/libnssdbm3.so")
-        runChmodCommand("0644 /usr/lib/libnssysinit.so")
+        runChmodCommand("0644 /usr/lib/libnsssysinit.so")
         runChmodCommand("0644 /usr/lib/libnssutil3.so")
         runChmodCommand("0644 /usr/lib/libsmime3.so")
         runChmodCommand("0644 /usr/lib/libsoftokn3.chk")
