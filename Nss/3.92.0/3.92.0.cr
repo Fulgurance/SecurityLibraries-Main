@@ -88,25 +88,25 @@ class Target < ISM::Software
         runChmodCommand("0644 /usr/lib/pkgconfig/nss.pc")
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |path|
-            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            filename = path.lchop(path[0..path.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0755 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |path|
-            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            filename = path.lchop(path[0..path.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |path|
-            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            filename = path.lchop(path[0..path.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |path|
-            filename = filepath.lchop(filepath[0..filepath.rindex("/")])
+            filename = path.lchop(path[0..path.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
