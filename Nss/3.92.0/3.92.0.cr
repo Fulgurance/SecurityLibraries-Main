@@ -89,13 +89,13 @@ class Target < ISM::Software
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "/#{filename}"
+            destination = "/usr/lib/#{filename}"
             runChmodCommand("0755 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "/#{filename}"
+            destination = "/usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
