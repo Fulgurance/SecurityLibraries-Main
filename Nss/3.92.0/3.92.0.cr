@@ -22,7 +22,8 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin")
 
-        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |path|
+            filepath = Ism.settings.rootPath != "/" ? path.sub(Ism.settings.rootPath,"") : path
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
@@ -30,7 +31,8 @@ class Target < ISM::Software
                         destination)
         end
 
-        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |path|
+            filepath = Ism.settings.rootPath != "/" ? path.sub(Ism.settings.rootPath,"") : path
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
 
@@ -41,7 +43,8 @@ class Target < ISM::Software
         copyFile(   "#{workDirectoryPath}/dist/Linux*/lib/libcrmf.a",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/")
 
-        Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |path|
+            filepath = Ism.settings.rootPath != "/" ? path.sub(Ism.settings.rootPath,"") : path
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
@@ -49,7 +52,8 @@ class Target < ISM::Software
                         destination)
         end
 
-        Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |path|
+            filepath = Ism.settings.rootPath != "/" ? path.sub(Ism.settings.rootPath,"") : path
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/include/nss/#{filename}"
 
@@ -83,25 +87,25 @@ class Target < ISM::Software
         runChmodCommand("0755 /usr/bin/pk12util")
         runChmodCommand("0644 /usr/lib/pkgconfig/nss.pc")
 
-        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |path|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0755 #{destination}")
         end
 
-        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |path|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
-        Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |path|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
-        Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |filepath|
+        Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |path|
             filename = filepath.lchop(filepath[0..filepath.rindex("/")])
             destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
