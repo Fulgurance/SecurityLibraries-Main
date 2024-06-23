@@ -89,25 +89,25 @@ class Target < ISM::Software
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.so"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "/#{filename}"
             runChmodCommand("0755 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/Linux*/lib/*.chk"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/public/nss/*"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "/usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
 
         Dir["#{workDirectoryPathNoChroot}/dist/private/nss/*"].each do |path|
             filename = path.lchop(path[0..path.rindex("/")])
-            destination = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/lib/#{filename}"
+            destination = "/usr/lib/#{filename}"
             runChmodCommand("0644 #{destination}")
         end
     end
