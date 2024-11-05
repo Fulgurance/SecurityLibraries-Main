@@ -1,7 +1,7 @@
 {
   "port": "SecurityLibraries-Main",
   "name": "Nss",
-  "version": "3.104.0",
+  "version": "3.106.0",
   "architectures": ["x86_64"],
   "description": "Set of libraries designed to support cross-platform development of security-enabled client and server applications",
   "website": "https://firefox-source-docs.mozilla.org/security/nss/releases/index.html#mozilla-projects-nss-releases",

@@ -1,0 +1,23 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libgpg-Error",
+  "version": "1.50.0",
+  "architectures": ["x86_64"],
+  "description": "Small library that originally defined common error values for all GnuPG components",
+  "website": "https://www.gnupg.org/software/libgpg-error/index.html",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
+      "version": ">=0.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}

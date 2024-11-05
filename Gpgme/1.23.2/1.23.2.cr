@@ -3,10 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr                                                  \
-                                    --docdir=/usr/share/doc/#{versionName}                          \
-                                    #{option("Libunistring") ? "" : "--with-included-unistring"}    \
-                                    --with-default-trust-store-pkcs11=\"pkcs11:\"",
+        configureSource(arguments:  "--prefix=/usr  \
+                                    --disable-gpg-test",
                         path:       buildDirectoryPath)
     end
 

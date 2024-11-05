@@ -1,0 +1,23 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Botan",
+  "version": "3.6.1",
+  "architectures": ["x86_64"],
+  "description": "C++ cryptography library released under the permissive Simplified BSD license",
+  "website": "https://botan.randombit.net/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
+      "version": ">=0.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}

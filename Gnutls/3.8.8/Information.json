@@ -1,7 +1,7 @@
 {
   "port": "SecurityLibraries-Main",
   "name": "Gnutls",
-  "version": "3.8.1",
+  "version": "3.8.8",
   "architectures": ["x86_64"],
   "description": "Secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them",
   "website": "https://gnutls.org/",
