@@ -12,6 +12,12 @@
       "name": "Cracklib",
       "version": ">=2.9.11",
       "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Setuptools",
+      "version": ">=75.0.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
