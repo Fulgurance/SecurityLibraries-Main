@@ -22,7 +22,7 @@
       "active": true,
       "dependencies": [
         {
-          "port": "Security-Main",
+          "port": "SecuritySoftwares-Main",
           "name": "P11-Kit",
           "version": ">=0.25.0",
           "options": []

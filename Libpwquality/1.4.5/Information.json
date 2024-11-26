@@ -28,7 +28,7 @@
       "active": true,
       "dependencies": [
         {
-          "port": "Security-Main",
+          "port": "SecuritySoftwares-Main",
           "name": "Linux-Pam",
           "version": ">=1.5.3",
           "options": []
@@ -40,5 +40,5 @@
   "uniqueDependencies": [],
   "uniqueOptions": [],
   "selectedDependencies": [],
-  "allowCodependencies": ["@Security-Main:Linux-Pam"]
+  "allowCodependencies": ["@SecuritySoftwares-Main:Linux-Pam"]
 }
