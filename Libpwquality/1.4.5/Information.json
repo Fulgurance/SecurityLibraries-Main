@@ -17,7 +17,7 @@
       "port": "ProgrammingTools-Main",
       "name": "Setuptools",
       "version": ">=75.0.0",
-      "options": []
+      "options": ["Python-3.12"]
     }
   ],
   "kernelDependencies": [],
