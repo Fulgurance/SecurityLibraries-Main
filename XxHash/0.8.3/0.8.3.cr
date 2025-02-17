@@ -3,7 +3,7 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource( arguments:  "PREFIX=/usr"
+        makeSource( arguments:  "PREFIX=/usr",
                     path: buildDirectoryPath)
     end
     
