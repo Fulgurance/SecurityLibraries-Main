@@ -76,31 +76,4 @@ class Target < ISM::Software
         end
     end
 
-    def install
-        super
-
-        runChmodCommand("0755 /usr/include/nss")
-        runChmodCommand("0644 /usr/lib/libcrmf.a")
-        runChmodCommand("0755 /usr/bin/certutil")
-        runChmodCommand("0755 /usr/bin/nss-config")
-        runChmodCommand("0755 /usr/bin/pk12util")
-
-        runChmodCommand("0644 /usr/lib/pkgconfig/nss.pc")
-        runChmodCommand("0644 /usr/lib/libcrmf.a")
-        runChmodCommand("0644 /usr/lib/libfreebl3.chk")
-        runChmodCommand("0644 /usr/lib/libfreebl3.so")
-        runChmodCommand("0644 /usr/lib/libfreeblpriv3.chk")
-        runChmodCommand("0644 /usr/lib/libfreeblpriv3.so")
-        runChmodCommand("0644 /usr/lib/libnss3.so")
-        runChmodCommand("0644 /usr/lib/libnssckbi-testlib.so")
-        runChmodCommand("0644 /usr/lib/libnssdbm3.chk")
-        runChmodCommand("0644 /usr/lib/libnssdbm3.so")
-        runChmodCommand("0644 /usr/lib/libnsssysinit.so")
-        runChmodCommand("0644 /usr/lib/libnssutil3.so")
-        runChmodCommand("0644 /usr/lib/libsmime3.so")
-        runChmodCommand("0644 /usr/lib/libsoftokn3.chk")
-        runChmodCommand("0644 /usr/lib/libsoftokn3.so")
-        runChmodCommand("0644 /usr/lib/libssl3.so")
-    end
-
 end
