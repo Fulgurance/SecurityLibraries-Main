@@ -1,112 +1,13 @@
 {
-  "descriptors": [
-    {
-      "target": "Default",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0755"
-    },
-    {
-      "target": "/usr/lib/libcrmf.a",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/pkgconfig/nss.pc",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libcrmf.a",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libfreebl3.chk",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libfreebl3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libfreeblpriv3.chk",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libfreeblpriv3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnss3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnssckbi-testlib.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnssdbm3.chk",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnssdbm3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnsssysinit.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libnssutil3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libsmime3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libsoftokn3.chk",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libsoftokn3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    },
-    {
-      "target": "/usr/lib/libssl3.so",
-      "user":   "root",
-      "group":  "root",
-      "mode":   "0644"
-    }
-  ]
+  "defaultConfiguration":
+  {
+      "fileUser":       "root",
+      "fileGroup":      "root",
+      "fileMode":       "0644",
+      "directoryUser":  "root",
+      "directoryGroup": "root",
+      "directoryMode":  "0755",
+
+  },
+  "descriptors": []
 }
