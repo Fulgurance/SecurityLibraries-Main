@@ -12,6 +12,12 @@
       "name": "Autoconf",
       "version": ">=2.72.0",
       "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Gettext",
+      "version": ">=0.22.5",
+      "options": []
     }
   ],
   "kernelDependencies": [],
