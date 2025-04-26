@@ -14,6 +14,12 @@
       "options": []
     },
     {
+      "port": "ProgrammingTools-Main",
+      "name": "Automake",
+      "version": ">=1.17.0",
+      "options": []
+    },
+    {
       "port": "Utilities-Main",
       "name": "Gettext",
       "version": ">=0.22.5",
