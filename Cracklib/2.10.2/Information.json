@@ -24,6 +24,12 @@
       "name": "Gettext",
       "version": ">=0.22.5",
       "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Libtool",
+      "version": ">=2.5.3",
+      "options": []
     }
   ],
   "kernelDependencies": [],
