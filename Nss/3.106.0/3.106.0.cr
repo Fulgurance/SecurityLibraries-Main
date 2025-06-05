@@ -76,4 +76,29 @@ class Target < ISM::Software
         end
     end
 
+    def deploy
+        super
+
+        [   "/usr/lib/libcrmf.a",
+            "/usr/lib/pkgconfig/nss.pc",
+            "/usr/lib/libcrmf.a",
+            "/usr/lib/libfreebl3.chk",
+            "/usr/lib/libfreebl3.so",
+            "/usr/lib/libfreeblpriv3.chk",
+            "/usr/lib/libfreeblpriv3.so",
+            "/usr/lib/libnss3.so",
+            "/usr/lib/libnssckbi-testlib.so",
+            "/usr/lib/libnssdbm3.chk",
+            "/usr/lib/libnssdbm3.so",
+            "/usr/lib/libnsssysinit.so",
+            "/usr/lib/libnssutil3.so",
+            "/usr/lib/libsmime3.so",
+            "/usr/lib/libsoftokn3.chk",
+            "/usr/lib/libsoftokn3.so",
+            "/usr/lib/libssl3.so"].each do |file|
+            runChownCommand("root:root #{file}")
+            runChmodCommand("644 #{file}")
+        end
+    end
+
 end
