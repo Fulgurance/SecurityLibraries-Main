@@ -1,0 +1,23 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Gvm-Libs",
+  "version": "22.22.0",
+  "architectures": ["x86_64"],
+  "description": "Greenbone Vulnerability Management Libraries",
+  "website": "https://github.com/greenbone/gvm-libs",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Cmake",
+      "version": ">=3.27.2",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
