@@ -12,6 +12,12 @@
       "name": "Cmake",
       "version": ">=3.27.2",
       "options": []
+    },
+    {
+      "port": "NetworkingLibraries-Main",
+      "name": "Hiredis",
+      "version": ">=1.3.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
