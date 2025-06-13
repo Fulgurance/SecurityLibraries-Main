@@ -30,6 +30,12 @@
       "name": "CJson",
       "version": ">=1.7.18",
       "options": []
+    },
+    {
+      "port": "NetworkingLibraries-Main",
+      "name": "Paho-Mqtt-C",
+      "version": ">=1.3.14",
+      "options": []
     }
   ],
   "kernelDependencies": [],
