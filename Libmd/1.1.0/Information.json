@@ -1,0 +1,23 @@
+{
+  "port": "SecurityLibraries-Main",
+  "name": "Libmd",
+  "version": "1.1.0",
+  "architectures": ["x86_64"],
+  "description": "BSD Mesage Digest functions",
+  "website": "https://gitlab.freedesktop.org/libbsd/libmd",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
+      "version": ">=0.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
