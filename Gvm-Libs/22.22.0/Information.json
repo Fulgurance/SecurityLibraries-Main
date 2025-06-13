@@ -18,6 +18,12 @@
       "name": "Hiredis",
       "version": ">=1.3.0",
       "options": []
+    },
+    {
+      "port": "SecurityLibraries-Main",
+      "name": "Gpgme",
+      "version": ">=1.23.2",
+      "options": []
     }
   ],
   "kernelDependencies": [],
