@@ -24,6 +24,12 @@
       "name": "Gpgme",
       "version": ">=1.23.2",
       "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "CJson",
+      "version": ">=1.7.18",
+      "options": []
     }
   ],
   "kernelDependencies": [],
