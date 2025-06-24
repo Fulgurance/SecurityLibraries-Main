@@ -1,6 +1,0 @@
-{
-  "name": "SecurityLibraries-Main",
-  "url": "https://github.com/Fulgurance/SecurityLibraries-Main",
-  "publicKeyUrl": "http://www.slashlinux.io/keyring/Fulgurance.key",
-  "description": "Port that contain libraries to enforce the system security"
-}
