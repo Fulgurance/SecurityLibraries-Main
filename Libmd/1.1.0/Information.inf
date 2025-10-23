@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libmd
+VERSION
+    1.1.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    BSD Mesage Digest functions
+WEBSITE
+    https://gitlab.freedesktop.org/libbsd/libmd
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

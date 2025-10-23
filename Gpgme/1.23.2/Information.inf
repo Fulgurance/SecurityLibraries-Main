@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Gpgme
+VERSION
+    1.23.2
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Library designed to make access to GnuPG easier for applications
+WEBSITE
+    https://www.gnupg.org/software/gpgme/index.html
+DEPENDENCIES
+        @SecurityLibraries-Main:Libassuan>=2.5.6
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

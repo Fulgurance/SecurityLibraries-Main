@@ -1,0 +1,26 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libksba
+VERSION
+    1.6.4
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Library to make the tasks of working with X.509 certificates, CMS data and related objects more easy
+WEBSITE
+    https://www.gnupg.org/software/libksba/index.html
+DEPENDENCIES
+        @SecurityLibraries-Main:Libgpg-Error>=1.47.0
+KERNELDEPENDENCIES
+OPTIONS
+    name: Valgrind
+    description: Enable valgrind support
+    active: false
+    dependencies:
+        @Utilities-Main:Valgrind>=3.21.0
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

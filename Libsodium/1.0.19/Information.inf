@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libsodium
+VERSION
+    1.0.19
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Modern, easy-to-use software library for encryption, decryption, signatures, password hashing, and more
+WEBSITE
+    https://libsodium.gitbook.io/doc/
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

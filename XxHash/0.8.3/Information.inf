@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    XxHash
+VERSION
+    0.8.3
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Extremely fast non-cryptographic hash algorithm
+WEBSITE
+    https://github.com/Cyan4973/xxHash
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Botan
+VERSION
+    3.4.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    C++ cryptography library released under the permissive Simplified BSD license
+WEBSITE
+    https://botan.randombit.net/
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

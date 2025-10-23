@@ -1,0 +1,33 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Nss
+VERSION
+    3.106.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Set of libraries designed to support cross-platform development of security-enabled client and server applications
+WEBSITE
+    https://firefox-source-docs.mozilla.org/security/nss/releases/index.html#mozilla-projects-nss-releases
+DEPENDENCIES
+        @BaseLibraries-Main:Nspr>=4.35.0
+KERNELDEPENDENCIES
+OPTIONS
+    name: P11-Kit
+    description: Enable p11-kit support
+    active: true
+    dependencies:
+        @SecuritySoftwares-Main:P11-Kit>=0.25.0
+    kernelDependencies:
+
+    name: Sqlite
+    description: Enable sqlite support
+    active: false
+    dependencies:
+        @DatabaseLibraries-Main:Sqlite>=3.42.0
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

@@ -1,0 +1,28 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libpwquality
+VERSION
+    1.4.5
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Password quality checking library
+WEBSITE
+    https://github.com/libpwquality/libpwquality
+DEPENDENCIES
+        @SecurityLibraries-Main:Cracklib>=2.9.11
+        @ProgrammingTools-Main:Setuptools>=75.0.0(Python-3.12)
+KERNELDEPENDENCIES
+OPTIONS
+    name: Linux-Pam
+    description: Enable linux-pam support
+    active: true
+    dependencies:
+        @SecuritySoftwares-Main:Linux-Pam>=1.5.3
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
+    @SecuritySoftwares-Main:Linux-Pam
