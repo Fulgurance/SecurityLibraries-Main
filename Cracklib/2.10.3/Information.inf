@@ -1,0 +1,22 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Cracklib
+VERSION
+    2.10.3
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    CrackLib Library and Dictionaries
+WEBSITE
+    https://github.com/cracklib/cracklib
+DEPENDENCIES
+        @ProgrammingTools-Main:Autoconf>=2.72.0
+        @ProgrammingTools-Main:Automake>=1.17.0
+        @Utilities-Main:Gettext>=0.22.5
+        @BaseLibraries-Main:Libtool>=2.5.3
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

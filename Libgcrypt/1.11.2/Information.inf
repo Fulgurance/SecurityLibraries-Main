@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libgcrypt
+VERSION
+    1.11.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    General purpose cryptographic library originally based on code from GnuPG
+WEBSITE
+    https://www.gnupg.org/related_software/libgcrypt/
+DEPENDENCIES
+        @SecurityLibraries-Main:Libgpg-Error>=1.47.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

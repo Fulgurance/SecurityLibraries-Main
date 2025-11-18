@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Nettle
+VERSION
+    3.10.2
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Cryptographic library that is designed to fit easily in more or less any context
+WEBSITE
+    https://www.lysator.liu.se/~nisse/nettle/
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

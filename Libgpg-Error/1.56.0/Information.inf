@@ -1,0 +1,19 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Libgpg-Error
+VERSION
+    1.56.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Small library that originally defined common error values for all GnuPG components
+WEBSITE
+    https://www.gnupg.org/software/libgpg-error/index.html
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
