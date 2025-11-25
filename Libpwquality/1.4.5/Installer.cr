@@ -6,7 +6,7 @@ class Target < ISM::Software
         configureSource(arguments:  "--prefix=/usr                      \
                                     --disable-static                    \
                                     --with-securedir=/usr/lib/security  \
-                                    --with-python-binary=python3        \
+                                    --with-python-binary=python3.12     \
                                     #{option("Linux-Pam") ? "--enable-pam" : "--disable-pam"} ",
                         path:       buildDirectoryPath)
     end
