@@ -1,0 +1,75 @@
+PORT
+    SecurityLibraries-Main
+NAME
+    Gnutls
+VERSION
+    3.8.8
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them
+WEBSITE
+    https://gnutls.org/
+DEPENDENCIES
+        @SecurityLibraries-Main:Nettle>=3.9.1
+KERNELDEPENDENCIES
+OPTIONS
+    name: Make-Ca
+    description: Enable make-ca support
+    active: true
+    dependencies:
+        @SecuritySoftwares-Main:Make-Ca>=1.12.0
+    kernelDependencies:
+
+    name: Libunistring
+    description: Enable libunistring support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Libunistring>=1.1.0
+    kernelDependencies:
+
+    name: Libtasn1
+    description: Enable libtasn1 support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Libtasn1>=4.19.0
+    kernelDependencies:
+
+    name: P11-Kit
+    description: Enable p11-kit support
+    active: true
+    dependencies:
+        @SecuritySoftwares-Main:P11-Kit>=0.25.0
+    kernelDependencies:
+
+    name: Brotli
+    description: Enable brotli support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Brotli>=1.0.9
+    kernelDependencies:
+
+    name: Libidn
+    description: Enable libidn support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Libidn>=1.41.0
+    kernelDependencies:
+
+    name: Libidn2
+    description: Enable libidn2 support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Libidn2>=2.3.4
+    kernelDependencies:
+
+    name: Libseccomp
+    description: Enable libseccomp support
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Libseccomp>=2.5.4
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
